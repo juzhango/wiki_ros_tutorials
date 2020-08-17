@@ -7,7 +7,9 @@ std::string turtle_name;
 
 
 void poseCallback(const turtlesim::PoseConstPtr& msg){
+  // Here, we create a TransformBroadcaster object that we'll use later to send the transformations over the wire.
   static tf::TransformBroadcaster br;
+  // Here we create a Transform object, and copy the information from the 2D turtle pose into the 3D transform.
   tf::Transform transform;
   transform.setOrigin( tf::Vector3(msg->x, msg->y, 0.0) );
   tf::Quaternion q;
