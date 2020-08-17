@@ -1,5 +1,5 @@
 build
-delve
+devel
 install
 
 cmake-build-debug
